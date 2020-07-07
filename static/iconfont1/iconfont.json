@@ -1,0 +1,16 @@
+{
+  "id": "1925289",
+  "name": "guiguyinyue",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "8776987",
+      "name": "notification",
+      "font_class": "icon-test",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+/* pages/index/index.wxss */
+
+/*轮播图部分样式*/
+
+.navSwiper {
+  width: 100%;
+  height: 300rpx;
+}
+
+.navSwiper image {
+  width: 100%;
+  height: 100%;
+}
+
+/*导航区域*/
+
+.navContainer {
+  display: flex;
+}
+
+.navItem {
+  width: 20%;
+  flex-direction: column;
+  text-align: center;
+}
+
+.navItem .iconfont {
+  width: 100rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 50rpx;
+  border-radius: 50%;
+  display: block;
+  background: #df5000;
+  margin: 0 auto;
+  margin-top: 30rpx;
+}
+
+.navItem text {
+  font-size: 26rpx;
+}
+
+/*内容区域---推荐区域已经封装成组件*/
+
+/* .recommendContainer {
+  padding: 40rpx 20rpx;
+}
+
+.recommendContainer .header .title {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.recommendContainer .header .more {
+  float: right;
+  border: 1rpx solid #000;
+  border-radius: 10rpx;
+  padding: 10rpx 20rpx;
+}
+ */
+
+/*滑块部分样式*/
+
+.scrollContainer {
+  display: flex;
+  margin-top: 30rpx;
+  height: 300rpx;
+  padding: 0 20rpx;
+}
+
+.scrollContainer .scrollItem {
+  width: 200rpx;
+  margin-right: 20rpx;
+}
+
+.scrollContainer .scrollItem image {
+  display: block;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+}
+
+.scrollContainer .scrollItem text {
+  display: block;
+  font-size: 26rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/*排行榜*/
+
+.topListSwiper {
+  padding: 0 20rpx;
+  height: 450rpx;
+}
+.swiperContent {
+  background: #fbfbfb;
+  width: 96%;
+}
+.topListSwiper .swiperContent .title {
+  margin-bottom: 20rpx;
+}
+.topListSwiper .swiperContent .musicContent{
+  display: flex;
+  /*当盒子加上弹性布局之后,子元素块元素 但是后代元素不受影响*/
+  margin-bottom: 10rpx;
+}
+
+.musicContent .musicPic {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+}
+.musicContent .count {
+  width: 100rpx;
+  text-align: center;
+}
+.musicContent .musicName{
+  font-size: 26rpx
+}
+.musicContent text{
+ height: 100rpx;
+ line-height: 100rpx 
+}
