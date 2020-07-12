@@ -1,14 +1,6 @@
 // pages/login/login.js
 import request from '../../utils/request'
 Page({
-  /* 
-  登录流程:
-  发送请求,获取表单数据进行数据校验
-  input事件
-  原生:oninput事件
-  框架:input事件名
-  小程序:bind/catch+input事件
-   */
   data: {
     phoneNumber: '',//手机号
     password: '',//密码
@@ -35,10 +27,10 @@ Page({
       })
     } */
     let {
-      phoneNumber,
+      phone,
       password
     } = this.data;
-    if (!phoneNumber || !password) {
+    if (!phone || !password) {
       //验证不通过
       wx.showToast({
         title: '用户名或者密码错误',
@@ -47,9 +39,9 @@ Page({
     } else {
       //前端验证通过
       //进行后端验证
-      let result = await request(`/login/cellphone?phone=${phoneNumber}&password=${password}`)
-      console.log(result.code);
-      if (result.code === 501) {
+      let result = await request(`/login/cellphone`, { phone,password,isLogin:true})
+     console.log(result);
+      if (result.code === 501|| result.code===400) {
         wx.showToast({
           title: '手机号错误',
           icon: 'none', //没有提示的图片但是可以显示最多两行文字
@@ -68,8 +60,8 @@ Page({
         //设置本地缓存
         wx.setStorageSync("userInfo", JSON.stringify(result.profile))
         //跳转到个人中心页面
-        wx.switchTab({
-          url: '/pages/personal/personal'
+        wx.reLaunch({
+          url: '/pages/personal/personal',
         })
 
       }

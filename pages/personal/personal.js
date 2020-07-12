@@ -45,8 +45,12 @@ Page({
     })
   },
   toLogin() {
+    //判断用户是否已经登录
+    if (this.data.userInfo.nickname) {
+      return;
+    }
     //跳转到登录界面
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/login/login'
     })
   },
@@ -56,7 +60,6 @@ Page({
   onLoad: async function(options) {
     // 判断本地是否有用户登录的信息数据
     let userInfo = wx.getStorageSync('userInfo');
-   // console.log(userInfo);
     if (userInfo) {
       this.setData({
         userInfo: JSON.parse(userInfo)
@@ -65,7 +68,7 @@ Page({
 
       // 获取用户播放 记录
       let recentPlayListData = await request(`/user/record?uid=${this.data.userInfo.userId}&type=0`)
-      console.log(recentPlayListData)
+     // console.log(recentPlayListData)
       this.setData({
         recentPlayList: recentPlayListData.allData
       })

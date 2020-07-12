@@ -1,0 +1,23 @@
+{
+  "name": "wangyi_ysq_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yan-siqi/wx_miniprogress.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yan-siqi/wx_miniprogress/issues"
+  },
+  "homepage": "https://github.com/yan-siqi/wx_miniprogress#readme",
+  "dependencies": {
+    "moment": "^2.27.0",
+    "pubsub-js": "^1.8.0"
+  }
+}
